@@ -13,7 +13,7 @@ while itersLeft != 0:
     itersLeft -= 1
 print(x + " squared is: " + str(ans))
 
-#Count vowels
+# Count vowels
 s = "ihqowefowiehufjhwfiapoe"
 numOfVowels = 0
 for letter in s:
@@ -21,8 +21,12 @@ for letter in s:
         numOfVowels += 1
 print("Number of vowels: " + str(numOfVowels))
 
+# Number of times the string 'bob' occurs in s. 
 
-#azcbobobegghakl
+
+
+
+# azcbobobegghakl
 prevString = ""
 s = 'azcbobobegghakl'
 for stringIndex in range(len(s)):
@@ -38,7 +42,7 @@ for stringIndex in range(len(s)):
             break
 print("Longest substring in alphabetical order is: " + prevString)
 
-#square root
+# Square root
 x = 25
 epsilon = 0.01
 numGuesses = 0
@@ -58,7 +62,7 @@ while abs(ans**2 - x) >= epsilon:
     
     
     
-#guess the number
+# Guess the number
 print("Please think of a number between 0 and 100!")
 low = 0
 high = 100
