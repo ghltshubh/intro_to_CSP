@@ -22,25 +22,30 @@ for letter in s:
 print("Number of vowels: " + str(numOfVowels))
 
 # Number of times the string 'bob' occurs in s. 
-
-
+s = 'boobbobbobaobobbob'
+count = 0
+for i in range(len(s)):
+        if i < len(s) - 2 and s[i] == 'b' and s[i+1] == 'o' and s[i+2] == 'b':
+            count += 1
+            i += 2
+print('Number of times bob occurs is: %d' %(count))
 
 
 # azcbobobegghakl
-prevString = ""
 s = 'azcbobobegghakl'
-for stringIndex in range(len(s)):
-    substring = s[stringIndex]
-    for counter in range(stringIndex,len(s)):
-        if counter+1 < len(s) and s[counter] <= s[counter+1]:
-            substring += s[counter+1]
-        else:
-            if len(substring) > len(prevString):
-                if counter+1 < len(s) and s[counter] == s[counter+1]:
-                    prevString = s[stringIndex:counter+1]
-                else: prevString = s[stringIndex:counter+1]
-            break
-print("Longest substring in alphabetical order is: " + prevString)
+currentSubstring = s[0]
+maxSubstring = s[0]
+for i in range(len(s) - 1):
+    if s[i+1] >= s[i]:
+        currentSubstring += s[i+1]
+        if len(currentSubstring) > len(maxSubstring):
+            maxSubstring = currentSubstring
+    else:
+        currentSubstring = s[i+1]
+print("Longest substring in alphabhatical order is: ", maxSubstring)
+            
+
+
 
 # Square root
 x = 25
