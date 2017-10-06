@@ -13,7 +13,7 @@ while itersLeft != 0:
     itersLeft -= 1
 print(x + " squared is: " + str(ans))
 
-# Count vowels
+# count vowels
 s = "ihqowefowiehufjhwfiapoe"
 numOfVowels = 0
 for letter in s:
@@ -31,7 +31,7 @@ for i in range(len(s)):
 print('Number of times bob occurs is: %d' %(count))
 
 
-# azcbobobegghakl
+# longest substring in alphabatical order
 s = 'azcbobobegghakl'
 currentSubstring = s[0]
 maxSubstring = s[0]
@@ -47,7 +47,7 @@ print("Longest substring in alphabhatical order is: ", maxSubstring)
 
 
 
-# Square root
+# square root
 x = 25
 epsilon = 0.01
 numGuesses = 0
@@ -67,34 +67,41 @@ while abs(ans**2 - x) >= epsilon:
     
     
     
-# Guess the number
+# guess the number
 print("Please think of a number between 0 and 100!")
 low = 0
 high = 100
 ans = (low + high)//2
 print("Is your secret number " + str(ans))
-guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly. ")
+guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate \
+              the guess is too low. Enter 'c' to indicate I guessed correctly. ")
 while guess != 'c':
     if guess == 'h':
         high = ans
         ans = (low + high)//2
         print("Is your secret number " + str(ans))
-        guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly. ")
+        guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' to \
+                      indicate the guess is too low. Enter 'c' to indicate I \
+                      guessed correctly. ")
     elif guess == 'l':
         low = ans
         ans = (low + high)//2
         print("Is your secret number " + str(ans))
-        guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly. ")
+        guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' \
+                      to indicate the guess is too low. Enter 'c' to indicate \
+                      I guessed correctly. ")
     else: 
         print("Invalid input")
         print("Is your secret number " + str(ans))
-        guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly. ")
+        guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' \
+                      to indicate the guess is too low. Enter 'c' to indicate \
+                      I guessed correctly. ")
         
 print("Game over. Your secret number was: " + str(ans))
 
 
 
-#decimal to binary
+# decimal to binary
 isNeg = False
 num = int(input("Input an integer to be converted to binary: "))
 numbr = num
@@ -112,7 +119,7 @@ if isNeg:
 print(str(numbr) + " in binary is " + binary)
 
 
-#decimal fraction to binary fraction
+# decimal fraction to binary fraction
 x = float(input("Enter a decimal number between 0 and 1: "))
 
 p = 0
@@ -145,8 +152,8 @@ a better approximation would be
 where g is an approximate root of f(x)
 '''
 
-#square root using newton-raphson
-#a = 2
+# square root using newton-raphson
+# a = 2
 num = int(input("Enter a number whose squar root is to be computed: "))
 epsilon = 0.0000001
 guess = num/2.0
@@ -158,7 +165,7 @@ while abs(guess*guess - num) >= epsilon:
 print('numGuesses = ' + str(numGuesses))
 print('Square root of ' + str(num) + ' is about ' + str(guess))
 
-#recursive exponent
+# recursive exponent
 def recurPower(base, exp):
     '''
     base: int or float.
