@@ -43,7 +43,6 @@ for i in range(len(s) - 1):
     else:
         currentSubstring = s[i+1]
 print("Longest substring in alphabhatical order is: ", maxSubstring)
-            
 
 
 
