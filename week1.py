@@ -17,7 +17,8 @@ print(x + " squared is: " + str(ans))
 s = "ihqowefowiehufjhwfiapoe"
 numOfVowels = 0
 for letter in s:
-    if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
+    if letter == "a" or letter == "e" or letter == "i" or letter == "o" or \
+    letter == "u":
         numOfVowels += 1
 print("Number of vowels: " + str(numOfVowels))
 
@@ -82,7 +83,8 @@ def minimum_sum(x1, y1, x2, y2, x3, y3):
                     distSum.update({(x,y):dist})
             except:
                 print("x: %f y:%f" %(x,y))   
-                print(area(x,y,x2,y2,x3,y3), area(x1,y1,x,y,x3,y3), area(x1,y1,x2,y2,x,y))
+                print(area(x,y,x2,y2,x3,y3), area(x1,y1,x,y,x3,y3), \
+                      area(x1,y1,x2,y2,x,y))
     distSum = sorted(distSum.items(), key=lambda x:x[1])
     if len(distSum) > 0:
         return [i for i in distSum[0][0]]
