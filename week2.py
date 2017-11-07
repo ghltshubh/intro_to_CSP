@@ -101,7 +101,6 @@ for i in range(p - len(binary)):
     
 binary = binary[0:-p] + '.' + binary[-p:]
 print('The binary representation of the decimal ' + str(x) + ' is\n' + binary)
-    
 
 
 '''
@@ -124,6 +123,20 @@ while abs(guess*guess - num) >= epsilon:
     guess = guess - (((guess**2) - num)/(2*guess))
 print('numGuesses = ' + str(numGuesses))
 print('Square root of ' + str(num) + ' is about ' + str(guess))
+
+# String manipulation
+a = 'number one - the larch'
+a.capitalize()   # Capitalizes the first letter
+a.upper()        # Capitalizes the whole string
+a.isupper()
+a.islower()
+a = a.capitalize()
+a.swapcase()
+a.index('e')     # index of first 'e', returns an error if not found
+a.find('e')      # index of 'e', returns -1 if not found
+a.count('e')
+a.replace('one', 'seven')
+
 
 # recursive exponent
 def recurPower(base, exp):
@@ -151,13 +164,6 @@ def Towers(n, fr, to, spare):
         Towers(n-1, fr, spare, to)
         Towers(1, fr, to, spare)
         Towers(n-1, spare, to, fr)
-
-
-
-
-
-
-
 
 
 
