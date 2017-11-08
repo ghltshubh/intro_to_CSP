@@ -132,8 +132,8 @@ a.isupper()
 a.islower()
 a = a.capitalize()
 a.swapcase()
-a.index('e')     # index of first 'e', returns an error if not found
-a.find('e')      # index of 'e', returns -1 if not found
+a.index('e')     # returns index else gives an error
+a.find('e')      # returns index else returns -1
 a.count('e')
 a.replace('one', 'seven')
 
@@ -164,6 +164,58 @@ def Towers(n, fr, to, spare):
         Towers(n-1, fr, spare, to)
         Towers(1, fr, to, spare)
         Towers(n-1, spare, to, fr)
+
+
+# GCD or HCF(Highest common factor)
+def gcdIter(a, b):
+    if a > b:
+        gcd = b
+    else:
+        gcd = a
+    while a % gcd != 0 or b % gcd != 0:
+        gcd -= 1
+    return gcd
+
+def gcdRecur(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcdRecur(b, a%b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
