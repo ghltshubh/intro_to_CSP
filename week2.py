@@ -182,9 +182,34 @@ def gcdRecur(a, b):
     else:
         return gcdRecur(b, a%b)
 
+def isPalindrome(s):
+    def toChars(s):
+        s = s.lower()
+        ans = ''
+        for c in s:
+            if c in 'abcdefghijklmnopqrstuvwxyz':
+                ans = ans + c
+        return ans
+    def isPal(s):
+        if len(s) <= 1:
+            return True
+        else:
+            return s[0] == s[-1] and isPal(s[1:-1])
 
-
-
+#def isIn(char, aStr):
+#    if aStr == '':
+#        return False
+#    if len(aStr) == 1:
+#        return char == aStr
+#    midIndex = len(aStr)//2
+#    midChar = aStr[midIndex]
+#    if char == midChar:
+#        return True
+#    elif char < midChar:
+#        return isIn(char, aStr[:midIndex])
+#    else:
+#        return isIn(char, aStr[midIndex+1:])
+        
 
 
 
