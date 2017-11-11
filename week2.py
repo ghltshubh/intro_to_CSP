@@ -211,7 +211,41 @@ def isPalindrome(s):
 #        return isIn(char, aStr[midIndex+1:])
         
 
+import math
+def polysum(n,s):
+    """
+    args:
+        n: number of sides of polygon
+        s: side length
+    returns:
+        sum of the area and square of the perimeter of the polygon to 4 decimal places
+    """
+    area = 0.25*n*s**2/math.tan(math.pi/n)  # area of the polygon
+    periSquare = (n*s)**2                   # square of the perimeter(n*s)
+    return round(area+periSquare, 4)
 
+# Debt Calculator
+def debtCalculator(balance, annualInterestRate, monthlyPaymentRate):
+    for i in range(12):
+        balance = (balance - monthlyPaymentRate*balance)*annualInterestRate/(12.0) + (balance - monthlyPaymentRate*balance)
+    return round(balance, 2)
+
+balance = 3329.0
+annualInterestRate = 0.2
+newBalance = balance
+low = newBalance/12.0
+high = newBalance*(1.0 + annualInterestRate/12.0)**12
+monthlyPayment = (low + high)/2.0
+while abs(newBalance) > 0.01:
+    newBalance = balance
+    for i in range(12):
+        newBalance = (newBalance - monthlyPayment)*annualInterestRate/(12.0) + (newBalance - monthlyPayment)
+    if newBalance < 0:
+        high = monthlyPayment
+    else:
+        low = monthlyPayment
+    monthlyPayment = (high + low)/2.0
+print("Lowest Payment: " + str(round(monthlyPayment, 2)))
 
 
 
