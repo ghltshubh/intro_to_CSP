@@ -41,17 +41,52 @@ def most_common_words(freqs):
             words.append(k)
     return (words, best)
 
+# Find words that are atleast as frequent as a given frequency
+def words_often(freqs, minTimes):
+    result = []
+    done = False
+    while not done:
+        temp = most_common_words(freqs)
+        if temp[1] >= minTimes:
+            result.append(temp)
+            for w in temp[0]:
+                del(freqs[w])
+        else:
+            done = True
+    return result
 
 
+# Counting total number of values(which can be a list) in a dictionary
+def how_many(aDict):
+    count = 0
+    for values in aDict.values:
+        count += len(values)
+    return count
+
+# Return key associated with the biggest value
+def biggest(aDict):
+    biggestValue = 0
+    key = None
+    for k, v in aDict.items():
+        if len(v) >= biggestValue:
+            key = k
+            biggestValue = len(v)
+    return key
+
+# Test
+biggest({'b': [1, 7, 5, 4, 3, 18, 10, 0], 'a': []})
 
 
-
-
-
-
-
-
-
+# Memoization
+def fib_efficient(n,d):
+    if n in d:
+        return d[n]
+    else:
+        ans = fib_efficient(n-1, d) + fib_efficient(n-2, d)
+        d[n] = ans
+        return ans
+d = {1:1, 2:2}
+print(fib_efficient(35,d))
 
 
 
